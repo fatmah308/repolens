@@ -1,0 +1,27 @@
+{
+  "total_count": 2,
+  "incomplete_results": false,
+  "items": [
+    {
+      "name": "pagination.py",
+      "path": "src/pagination.py",
+      "sha": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+      "html_url": "https://github.com/octocat/hello-world/blob/main/src/pagination.py",
+      "repository": { "full_name": "octocat/hello-world" },
+      "text_matches": [
+        { "fragment": "def parse_config(path):\n    ..." },
+        { "fragment": "# TODO: parse_config edge cases" }
+      ]
+    },
+    {
+      "name": "config_parser.py",
+      "path": "src/config_parser.py",
+      "sha": "b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+      "html_url": "https://github.com/octocat/hello-world/blob/main/src/config_parser.py",
+      "repository": { "full_name": "octocat/hello-world" },
+      "text_matches": [
+        { "fragment": "class ConfigParser:" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# Runtime dependencies. If you're not using `pip install -e .` / building
+# the package, `pip install -r requirements.txt` gets you a working
+# environment to run `python src/server.py` directly.
+#
+# For development (tests, linting), use: pip install -e ".[dev]"
+mcp>=1.2.0,<2.0.0
+httpx>=0.27.0
+python-dotenv>=1.0.0

@@ -1,0 +1,34 @@
+[
+  {
+    "number": 10,
+    "title": "Recently touched PR",
+    "state": "open",
+    "updated_at": "2024-06-18T00:00:00Z",
+    "user": { "login": "alicedev" },
+    "html_url": "https://github.com/octocat/hello-world/pull/10"
+  },
+  {
+    "number": 11,
+    "title": "Mildly stale PR",
+    "state": "open",
+    "updated_at": "2024-06-01T00:00:00Z",
+    "user": { "login": "bobbuilder" },
+    "html_url": "https://github.com/octocat/hello-world/pull/11"
+  },
+  {
+    "number": 12,
+    "title": "Very stale PR",
+    "state": "open",
+    "updated_at": "2024-04-01T00:00:00Z",
+    "user": { "login": "carollee" },
+    "html_url": "https://github.com/octocat/hello-world/pull/12"
+  },
+  {
+    "number": 13,
+    "title": "Closed PR, should never be flagged",
+    "state": "closed",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "user": { "login": "davedoe" },
+    "html_url": "https://github.com/octocat/hello-world/pull/13"
+  }
+]
