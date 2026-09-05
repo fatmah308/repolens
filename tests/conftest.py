@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 
 import pytest
-from repolens import config
+
 from repolens.github_client import GitHubClient
 
 FIXTURES_DIR = Path(__file__).parent / "fixtures"
@@ -33,15 +33,3 @@ async def github_client():
     client = GitHubClient(token="test-token")
     yield client
     await client.aclose()
-
-
-@pytest.fixture
-def isolated_session_db(tmp_path, monkeypatch):
-    """Point session_store at a fresh temp SQLite file for this test only.
-
-    Prevents tests from touching a real repolens_sessions.db and keeps
-    each test's session/state data isolated from the others.
-    """
-    db_path = tmp_path / "test_sessions.db"
-    monkeypatch.setattr(config, "SESSION_DB_PATH", str(db_path))
-    yield db_path
