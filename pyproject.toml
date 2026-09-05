@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "repolens"
 version = "0.2.0"
-description = "Read-only MCP server for inspecting GitHub repositories: issues, PR diffs, commit history, stale PRs, file churn, code search, and CI status. Runs locally over stdio or as a hosted multi-tenant HTTP service with GitHub OAuth login."
+description = "Read-only MCP server for inspecting GitHub repositories: issues, PR diffs, commit history, stale PRs, file churn, code search, and CI status."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -25,20 +25,10 @@ classifiers = [
 # Pinned to the mcp 1.x series: FastMCP's decorator-based API
 # (mcp.server.fastmcp) is what's documented here and what every current
 # MCP client (Claude Desktop included) is validated against.
-#
-# starlette and uvicorn are needed only for hosted (REPOLENS_TRANSPORT=http)
-# mode - stdio mode (the default, what Claude Desktop uses) never touches
-# them - but they're listed explicitly rather than relied on as mcp's
-# transitive deps, since hosted mode depends on their APIs directly
-# (custom_route handlers, Request/Response types) and pinning them here
-# means a future mcp release can't silently drop or swap them out from
-# under this code.
 dependencies = [
     "mcp>=1.2.0,<2.0.0",
     "httpx>=0.27.0",
     "python-dotenv>=1.0.0",
-    "starlette>=0.37.0",
-    "uvicorn>=0.29.0",
 ]
 
 [project.optional-dependencies]
@@ -59,12 +49,12 @@ Issues = "https://github.com/fatmah308/repolens/issues"
 [project.scripts]
 repolens = "repolens.server:main"
 
-# The repo keeps a flat `src/` directory (per project layout convention
-# here) rather than the more common `src/repolens/`. This mapping tells
-# setuptools to install everything under `src/` as the `repolens` package
-# (and `src/tools/` as `repolens.tools`), so internal absolute imports like
-# `from repolens.config import ...` and the console-script entry point
-# above both resolve correctly - including under `pip install -e .`.
+# The repo keeps a flat `src/` directory rather than the more common
+# `src/repolens/`. This mapping tells setuptools to install everything
+# under `src/` as the `repolens` package (and `src/tools/` as
+# `repolens.tools`), so internal absolute imports and the console-script
+# entry point above both resolve correctly - including under
+# `pip install -e .`.
 [tool.setuptools]
 package-dir = { "repolens" = "src", "repolens.tools" = "src/tools" }
 packages = ["repolens", "repolens.tools"]
